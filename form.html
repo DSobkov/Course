@@ -10,44 +10,19 @@
 <div class="form-box">
     <h1>Change password</h1>
         <div class="input-box">
-            <i class="fas fa-user"></i>
-        <input type="text"  placeholder="Entry login">
+            <input type="password"  placeholder="Entry password" id="myInput1">
         </div>
         <div class="input-box">
-            <i class="fas fa-key"></i>
-        <input type="password"  placeholder="Entry password" id="myInput">
-            <span class="eye" oneclick=" myFunct()">
-           <i id="hidel" class="far fa-eye"></i>
-                <i id="hidel2" class="far fa-eye-slash"></i>
+        <input type="password"  placeholder="Entry new password" id="myInput2">
             </span>
         </div>
     <div class="input-box">
-        <i class="fas fa-key"></i>
-        <input type="password"  placeholder="Entry new password" id="myInput">
-        <span class="eye">
-           <i id="hidel" class="far fa-eye"></i>
-                <i id="hidel2" class="far fa-eye-slash"></i>
+        <input type="password"  placeholder="Repeat new password" id="myInput2">
             </span>
     </div>
         <button type="button" class="change-btn">Change</button>
         </div>
 <script>
-    function myFunct() {
-        var x = document.getElementById("myInput")
-        var y = document.getElementById("hidel")
-        var z = document.getElementById("hide2")
-
-        if(x.type === 'password'){
-            x.type = "text";
-            y.style.display = "block";
-            z.style.display = "none"
-        }
-        else {
-            x.type ="password";
-            y.style.display="none";
-            z.style.display = "block"
-        }
-    }
 </script>
 </body>
 </html>
