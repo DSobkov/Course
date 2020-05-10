@@ -3,13 +3,11 @@ package main
 import (
 	"errors"
 	"github.com/dgrijalva/jwt-go"
-
-	"net/http"
-	"time"
-
 	"github.com/gorilla/mux"
 	"golang.org/x/crypto/bcrypt"
 	"log"
+	"net/http"
+	"time"
 )
 
 //jwt token
