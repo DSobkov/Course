@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"github.com/dgrijalva/jwt-go"
+
 	"net/http"
 	"time"
 
@@ -13,7 +14,7 @@ import (
 
 //jwt token
 var mySigningKey = []byte("secret")
-var GetTokenHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
+var GetTokenHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 	/* Create the token */
 	token := jwt.New(jwt.SigningMethodHS256)
 
@@ -31,12 +32,6 @@ var GetTokenHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Reque
 	/* Finally, write the token to the browser window */
 	w.Write([]byte(tokenString))
 })
-
-
-
-
-
-
 
 //password
 type User struct {
@@ -81,14 +76,11 @@ func ChangePassword(r *http.Request) error {
 	return nil
 }
 
-
 func main() {
 	//Init Router
 	r := mux.NewRouter()
 
 	r.Handle("/get-token", GetTokenHandler).Methods("GET")
-
-
 
 	log.Fatal(http.ListenAndServe(":8001", r))
 }

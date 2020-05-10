@@ -1,4 +1,4 @@
-package Course
+package main
 
 import (
 	"database/sql"
@@ -11,8 +11,6 @@ import (
 	"net/http"
 )
 
-
-
 //Book Struct (Model)
 type Book struct {
 	ID    string `json:"ID"`
@@ -23,6 +21,7 @@ type Book struct {
 var db *sql.DB
 var err error
 var books []Book
+
 //Get All Books
 func getBooks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -142,7 +141,7 @@ func deleteBook(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	db, err = sql.Open("postgres" , "postgresql://localhost:5432/ims")
+	db, err = sql.Open("postgres", "postgresql://localhost:5432/ims")
 
 	if err != nil {
 		panic(err.Error())
